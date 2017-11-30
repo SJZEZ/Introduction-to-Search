@@ -17,6 +17,8 @@ void search(int now, int sum) {
 			search(now + 1, sum + val[now][i]);
 			used[i] = false;
 		}
+
+	search(now + 1, sum);
 }
 
 int main() {
