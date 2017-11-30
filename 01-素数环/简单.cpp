@@ -21,7 +21,7 @@ bool used[25];
 
 void search(int now) {
 	if (now > n) {
-		if (is_prime(ans[1] + ans[20]))
+		if (is_prime(ans[1] + ans[n]))
 			print_answer();
 		
 		return;
