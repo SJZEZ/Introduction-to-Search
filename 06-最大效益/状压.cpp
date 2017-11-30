@@ -12,6 +12,8 @@ void search(int now, int sum, int used) {
 	for (int i = 1; i <= m; ++i)
 		if (!((used >> i) & 1))
 			search(now + 1, sum + val[now][i], used | (1 << i));
+
+	search(now + 1, sum, used);
 }
 
 int main() {
