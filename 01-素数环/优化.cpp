@@ -21,7 +21,7 @@ bool used[25], isp[50];
 
 void search(int now) {
 	if (now > n) {
-		if (isp[ans[1] + ans[20]])
+		if (isp[ans[1] + ans[n]])
 			print_answer();
 		
 		return;
