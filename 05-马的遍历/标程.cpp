@@ -1,3 +1,4 @@
+
 #include <cstdio>
 
 int n, m;
@@ -18,7 +19,7 @@ void print_answer() {
 const int move[4][2] = {
 	{ +1, +2 },
 	{ +1, -2 },
-	{ +2, +1 }, 
+	{ +2, +1 },
 	{ +2, -1 }
 };
 
@@ -27,19 +28,18 @@ void search(int x, int y) {
 	path_x[steps] = x;
 	path_y[steps] = y;
 
-	if (x == n && y == m) {
+	if (x == n && y == m)
 		print_answer();
-		return;
-	}
+	else {
+		for (int i = 0; i < 4; ++i) {
+			int a = x + move[i][0];
+			int b = y + move[i][1];
 
-	for (int i = 0; i < 4; ++i) {
-		int a = x + move[i][0];
-		int b = y + move[i][1];
+			if (a < 1 || a > n)continue;
+			if (b < 1 || b > m)continue;
 
-		if (a < 1 || a > n)continue;
-		if (b < 1 || b > m)continue;
-
-		search(a, b);
+			search(a, b);
+		}
 	}
 
 	path_x[steps] = 0;
